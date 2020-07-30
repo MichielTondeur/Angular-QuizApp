@@ -7,10 +7,11 @@ import { MainComponent } from './components/main/main.component';
 import { GameComponent } from './components/game/game.component';
 
 import { QuestionService } from './services/question.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, MainComponent, GameComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [QuestionService],
   bootstrap: [AppComponent],
 })
