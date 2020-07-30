@@ -9,9 +9,11 @@ import { Question } from '../../interfaces/question';
 })
 export class GameComponent implements OnInit {
   question: Question;
+  submitted: boolean;
 
   constructor(questionservice: QuestionService) {
     this.question = questionservice.getQuestion();
+    this.submitted = false;
   }
 
   ngOnInit(): void {}

@@ -1,1 +1,5 @@
-<p>game works!</p>
+<div>
+  <app-result *ngIf="submitted"></app-result>
+  <app-question *ngIf="!submitted" [question]="question.question"></app-question>
+  <li><a routerLink="/" routerLinkActive="active">Return to main menu</a></li>
+</div>
