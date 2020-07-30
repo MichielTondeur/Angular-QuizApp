@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionService } from '../../services/question.service';
-import { Question } from '../../interfaces/question';
+import { QuestionService } from '../../../services/question.service';
+import { Question } from '../../../interfaces/question';
 
 @Component({
   selector: 'app-game',
