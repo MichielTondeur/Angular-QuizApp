@@ -10,11 +10,31 @@ import { Question } from '../../interfaces/question';
 export class GameComponent implements OnInit {
   question: Question;
   submitted: boolean;
+  userAnswer: string;
 
-  constructor(questionservice: QuestionService) {
-    this.question = questionservice.getQuestion();
+  constructor(private questionservice: QuestionService) {
+    this.question = {
+      id: 1,
+      question: '',
+      answer: '',
+      category: '',
+    };
     this.submitted = false;
+    this.userAnswer = '';
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.question = this.questionservice.getQuestion();
+  }
+
+  onSubmitted(answer: string) {
+    this.userAnswer = answer;
+    this.submitted = true;
+  }
+
+  onNext() {
+    this.userAnswer = '';
+    this.submitted = false;
+    this.question = this.questionservice.getQuestion();
+  }
 }

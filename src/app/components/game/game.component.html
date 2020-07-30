@@ -1,5 +1,5 @@
 <div>
-  <app-result *ngIf="submitted"></app-result>
-  <app-question *ngIf="!submitted" [question]="question.question"></app-question>
+  <app-result *ngIf="submitted" [answer]="question.answer" [userAnswer]="userAnswer" (next)="onNext()"></app-result>
+  <app-question *ngIf="!submitted" [question]="question.question" (submitted)="onSubmitted($event)"></app-question>
   <li><a routerLink="/" routerLinkActive="active">Return to main menu</a></li>
 </div>

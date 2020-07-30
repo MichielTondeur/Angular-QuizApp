@@ -1,14 +1,23 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.scss'],
 })
-export class QuestionComponent implements OnInit {
-  @Input() question: string = '';
+export class QuestionComponent {
+  @Input() question: string;
+  @Output() submitted = new EventEmitter<string>();
+  userAnswer: string;
 
-  constructor() {}
+  constructor() {
+    this.question = '';
+    this.userAnswer = '';
+  }
 
-  ngOnInit(): void {}
+  onSubmit() {
+    if (this.userAnswer !== '') {
+      this.submitted.emit(this.userAnswer);
+    }
+  }
 }

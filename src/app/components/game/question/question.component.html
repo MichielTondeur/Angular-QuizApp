@@ -1,2 +1,5 @@
+<h1>Question</h1>
 <p>{{question}}</p>
-<input type="text">
+<label>answer:
+  <input [(ngModel)]="userAnswer" placeholder="answer" (keyup.enter)="onSubmit()"/>
+</label>
