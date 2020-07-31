@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from '../app-routing.module';
-
 import { CommonModule } from '@angular/common';
+
+import { MatInputModule } from '@angular/material/input';
+
 import { GameComponent } from './components/game/game.component';
 import { QuestionComponent } from './components/game/question/question.component';
 import { ResultComponent } from './components/game/result/result.component';
@@ -12,7 +14,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [GameComponent, QuestionComponent, ResultComponent],
-  imports: [AppRoutingModule, CommonModule, FormsModule],
+  imports: [AppRoutingModule, CommonModule, FormsModule, MatInputModule],
   providers: [QuestionService],
 })
 export class GameModule {}
