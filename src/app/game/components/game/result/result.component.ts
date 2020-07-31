@@ -22,7 +22,7 @@ export class ResultComponent implements OnInit {
   }
 
   onNextQuestion() {
-    this.next.emit();
+    this.next.emit(this.result);
   }
 
   trimWhiteSpace = (answer: string): string => {

@@ -11,6 +11,7 @@ export class GameComponent implements OnInit {
   question: Question;
   submitted: boolean;
   userAnswer: string;
+  streak: number;
 
   constructor(private questionservice: QuestionService) {
     this.question = {
@@ -21,6 +22,7 @@ export class GameComponent implements OnInit {
     };
     this.submitted = false;
     this.userAnswer = '';
+    this.streak = 0;
   }
 
   ngOnInit(): void {
@@ -32,9 +34,10 @@ export class GameComponent implements OnInit {
     this.submitted = true;
   }
 
-  onNext() {
+  onNext(result: boolean) {
     this.userAnswer = '';
     this.submitted = false;
     this.question = this.questionservice.getQuestion();
+    this.streak = result ? this.streak + 1 : 0;
   }
 }
