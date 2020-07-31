@@ -6,42 +6,38 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./result.component.scss'],
 })
 export class ResultComponent implements OnInit {
-  @Input() answer: string;
-  @Input() userAnswer: string;
-  result: boolean;
-  @Output() next = new EventEmitter();
+  @Input() public answer = '';
+  @Input() public userAnswer = '';
+  public result = false;
+  @Output() private next = new EventEmitter();
 
-  constructor() {
-    this.answer = '';
-    this.userAnswer = '';
-    this.result = false;
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.result = this.checkAnswer(this.answer, this.userAnswer);
   }
 
-  onNextQuestion() {
+  public onNextQuestion(): void {
     this.next.emit(this.result);
   }
 
-  trimWhiteSpace = (answer: string): string => {
+  private trimWhiteSpace = (answer: string): string => {
     return answer.trim();
   };
 
-  replaceSpecialChars = (answer: string): string => {
+  private replaceSpecialChars = (answer: string): string => {
     return answer.replace(/[^a-zA-Z0-9]+/gi, '');
   };
 
-  replaceAccentedChars = (answer: string): string => {
+  private replaceAccentedChars = (answer: string): string => {
     return answer.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   };
 
-  setToLowerCase = (answer: string): string => {
+  private setToLowerCase = (answer: string): string => {
     return answer.toLowerCase();
   };
 
-  normalizeAnswer = (answer: string): string => {
+  private normalizeAnswer = (answer: string): string => {
     return this.replaceSpecialChars(
       this.replaceAccentedChars(
         this.setToLowerCase(this.trimWhiteSpace(answer))
@@ -49,7 +45,7 @@ export class ResultComponent implements OnInit {
     );
   };
 
-  checkAnswer = (answer: string, inputAnswer: string): boolean => {
+  private checkAnswer = (answer: string, inputAnswer: string): boolean => {
     return this.normalizeAnswer(answer) === this.normalizeAnswer(inputAnswer);
   };
 }

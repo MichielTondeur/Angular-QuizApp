@@ -6,16 +6,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./question.component.scss'],
 })
 export class QuestionComponent {
-  @Input() question: string;
-  @Output() submitted = new EventEmitter<string>();
-  userAnswer: string;
+  @Input() public question = '';
+  public userAnswer = '';
+  @Output() private submitted = new EventEmitter<string>();
 
-  constructor() {
-    this.question = '';
-    this.userAnswer = '';
-  }
+  constructor() {}
 
-  onSubmit() {
+  public onSubmit() {
     if (this.userAnswer !== '') {
       this.submitted.emit(this.userAnswer);
     }
