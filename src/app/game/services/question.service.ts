@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Question } from '../interfaces/question';
 import { QUESTIONS } from './mock-questions';
+
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +10,7 @@ import { QUESTIONS } from './mock-questions';
 export class QuestionService {
   constructor() {}
 
-  getQuestion() {
-    return QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
+  getQuestion(): Observable<Question> {
+    return of(QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)]);
   }
 }
