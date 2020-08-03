@@ -1,9 +1,8 @@
 <mat-toolbar id="navbar">
   <div class="wrapper">
-    <a routerLink="/">Trivia</a>
+    <a routerLink="/" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active">Trivia</a>
     <span class="spacer"></span>
-    <a routerLink="/game">Play game</a>
-    <a routerLink="/">Highscores</a>
+    <a routerLink="/game" routerLinkActive="is-active">Play game</a>
   </div>
 </mat-toolbar>
 

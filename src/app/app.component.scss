@@ -3,6 +3,16 @@ mat-toolbar {
   background-color: white;
   position: fixed;
   transition:box-shadow 0.5s;
+
+  a {
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+  }
+
+  a.is-active{
+    background: linear-gradient(to right, red, orange , yellow, green, cyan, blue, violet) no-repeat;
+    background-size: 100% 3px;
+    background-position: left bottom;  }
 }
 
 .sticky {
