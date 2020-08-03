@@ -1,0 +1,50 @@
+.wrapper {
+  width: 1080px;
+  margin: auto;
+}
+
+.main-container {
+  height: 700px;
+  display: flex;
+  align-items: center;
+
+  .main-container-left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 60%;
+
+    h1 {
+      font-size: 5em;
+      font-family: 'Nunito', sans-serif;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1em;
+      white-space: wrap;
+      font-family: 'Nunito', sans-serif;
+      font-weight: lighter;
+    }
+
+    a {
+      font-family: 'Nunito', sans-serif;
+      font-weight: bold;
+      width: 50%;
+    }
+
+
+  }
+
+  .main-container-right {
+    flex: 3;
+    background-color: green;
+  }
+}
+
+
+.categories {
+  height: 600px;
+  background-color: grey;
+}
