@@ -1,6 +1,11 @@
-<div>
-  <app-result *ngIf="submitted" [answer]="question.answer" [userAnswer]="userAnswer" (next)="onNext($event)"></app-result>
-  <app-question *ngIf="!submitted" [question]="question.question" (submitted)="onSubmitted($event)"></app-question>
-  <p *ngIf="streak >= 2">You're on a roll, {{streak}} in a row!</p>
-  <li><a routerLink="/" routerLinkActive="active">Return to main menu</a></li>
-</div>
+<main class="wrapper">
+  <mat-card>
+    <mat-card-header style='background-color: purple'></mat-card-header>
+    <app-result *ngIf="submitted" [answer]="question.answer" [userAnswer]="userAnswer" (next)="onNext($event)"></app-result>
+    <app-question *ngIf="!submitted" [question]="question.question" (submitted)="onSubmitted($event)"></app-question>
+    <p *ngIf="streak >= 2">You're on a roll, {{streak}} in a row!</p>
+    <mat-card-actions>
+      <a routerLink="/" routerLinkActive="active">Return to main menu</a>
+    </mat-card-actions>
+  </mat-card>
+</main>
