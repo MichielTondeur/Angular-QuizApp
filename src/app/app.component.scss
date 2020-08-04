@@ -3,6 +3,7 @@ mat-toolbar {
   background-color: white;
   position: fixed;
   transition:box-shadow 0.5s;
+  z-index: 1001;
 
   a {
     font-family: 'Nunito', sans-serif;
