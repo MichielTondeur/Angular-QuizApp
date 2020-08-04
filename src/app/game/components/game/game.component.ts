@@ -60,9 +60,9 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   public getColor(category: string) {
-    let color = this.colors.filter((color) => color.category === category);
-    if (color.length > 0) {
-      return color[0].color;
+    const item = this.colors.filter((color) => color.category === category);
+    if (item.length > 0) {
+      return item[0].color;
     }
     return 'white';
   }

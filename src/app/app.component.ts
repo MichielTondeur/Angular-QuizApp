@@ -10,14 +10,11 @@ export class AppComponent {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    if (window.pageYOffset > 55) {
-      let element = document.getElementById('navbar');
-      if (element) {
+    const element = document.getElementById('navbar');
+    if (element) {
+      if (window.pageYOffset > 55) {
         element.classList.add('sticky');
-      }
-    } else {
-      let element = document.getElementById('navbar');
-      if (element) {
+      } else {
         element.classList.remove('sticky');
       }
     }
