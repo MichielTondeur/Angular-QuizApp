@@ -24,7 +24,7 @@ export class GameComponent implements OnInit, OnDestroy {
     { category: 'History', color: 'yellow' },
     { category: 'Sports & Leisure', color: 'Orange' },
     { category: 'Geography', color: 'blue' },
-    { category: 'Entertainment', color: 'pink' },
+    { category: 'Entertainment', color: 'hotpink' },
     { category: 'Arts & Literature', color: 'purple' },
     { category: 'Science & Nature', color: 'green' },
   ];
