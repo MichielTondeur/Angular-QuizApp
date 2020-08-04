@@ -20,6 +20,15 @@ export class GameComponent implements OnInit, OnDestroy {
   public userAnswer = '';
   public streak = 0;
 
+  private colors = [
+    { category: 'History', color: 'yellow' },
+    { category: 'Sports & Leisure', color: 'Orange' },
+    { category: 'Geography', color: 'blue' },
+    { category: 'Entertainment', color: 'pink' },
+    { category: 'Arts & Literature', color: 'purple' },
+    { category: 'Science & Nature', color: 'green' },
+  ];
+
   private subscription!: Subscription;
 
   constructor(private questionservice: QuestionService) {}
@@ -48,5 +57,13 @@ export class GameComponent implements OnInit, OnDestroy {
     this.submitted = false;
     this.getQuestion();
     this.streak = result ? this.streak + 1 : 0;
+  }
+
+  public getColor(category: string) {
+    let color = this.colors.filter((color) => color.category === category);
+    if (color.length > 0) {
+      return color[0].color;
+    }
+    return 'white';
   }
 }

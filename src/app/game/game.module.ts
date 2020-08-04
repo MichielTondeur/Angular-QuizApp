@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 import { GameComponent } from './components/game/game.component';
 import { QuestionComponent } from './components/game/components/question/question.component';
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MatInputModule,
     MatCardModule,
+    MatButtonModule,
   ],
   providers: [QuestionService],
 })

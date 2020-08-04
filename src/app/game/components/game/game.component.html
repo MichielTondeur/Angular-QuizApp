@@ -1,11 +1,11 @@
 <main class="wrapper">
   <mat-card>
-    <mat-card-header style='background-color: purple'></mat-card-header>
-    <app-result *ngIf="submitted" [answer]="question.answer" [userAnswer]="userAnswer" (next)="onNext($event)"></app-result>
-    <app-question *ngIf="!submitted" [question]="question.question" (submitted)="onSubmitted($event)"></app-question>
-    <p *ngIf="streak >= 2">You're on a roll, {{streak}} in a row!</p>
-    <mat-card-actions>
+    <mat-card-header [ngStyle]="{'background-color': getColor(question.category)}"></mat-card-header>
+    <mat-card-content>
+      <app-result *ngIf="submitted" [answer]="question.answer" [userAnswer]="userAnswer" (next)="onNext($event)"></app-result>
+      <app-question *ngIf="!submitted" [question]="question.question" (submitted)="onSubmitted($event)"></app-question>
+      <p *ngIf="streak >= 2">You're on a roll, {{streak}} in a row!</p>
       <a routerLink="/" routerLinkActive="active">Return to main menu</a>
-    </mat-card-actions>
+    </mat-card-content>
   </mat-card>
 </main>
