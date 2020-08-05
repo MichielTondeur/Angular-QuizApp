@@ -65,8 +65,32 @@
   }
 }
 
-
 .categories {
-  height: 600px;
-  background-color: grey;
+  height: 500px;
+  background-color: #f5f5f5;
+
+  .categories-container {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 3em;
+      width: 50%;
+    }
+
+    .categories-list {
+      height: 200px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .categories-item {
+        width: 33%;
+      }
+    }
+  }
 }
