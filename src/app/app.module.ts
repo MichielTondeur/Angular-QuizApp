@@ -11,9 +11,10 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 
 import { GameModule } from './game/game.module';
+import { StickyScrollDirective } from './directives/sticky-scroll.directive';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent],
+  declarations: [AppComponent, MainComponent, StickyScrollDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,
