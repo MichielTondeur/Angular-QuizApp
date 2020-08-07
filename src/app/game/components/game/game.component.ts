@@ -3,6 +3,7 @@ import { QuestionService } from '../../services/question.service';
 import { Question } from '../../interfaces/question';
 
 import { Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-game',
@@ -44,7 +45,10 @@ export class GameComponent implements OnInit, OnDestroy {
   private getQuestion() {
     this.subscription = this.questionservice
       .getQuestion()
-      .subscribe((question) => (this.question = question));
+      .pipe(take(1))
+      .subscribe((question) => {
+        this.question = question;
+      });
   }
 
   public onSubmitted(answer: string) {
