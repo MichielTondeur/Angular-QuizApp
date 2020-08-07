@@ -1,0 +1,8 @@
+<h1>Question</h1>
+<p>{{question}}</p>
+<form class="answer-form">
+  <mat-form-field class="answer-full-width">
+    <mat-label>Answer</mat-label>
+    <input matInput [(ngModel)]="userAnswer" name="anwser" (keyup.enter)="onSubmit()" autocomplete="off"/>
+  </mat-form-field>
+</form>
